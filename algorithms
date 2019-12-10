@@ -1,0 +1,18 @@
+Sorting Algorithms:
+1. Bubble Sort
+2. Merge Sort
+3. Quick Sort
+4. Heap Sort
+
+Searching Algorithms:
+1. Binary Search (Iterative and Recursive)
+
+Needle in a Haystack, find if string A is present in string B.
+- KMP Algotithm
+- Rabin-Karp
+
+
+Kadane's Algotithm
+
+Find Majority Element in an array:
+    - Boyer Moore Majority vote algorithm
