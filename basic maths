@@ -1,0 +1,18 @@
+
+n + (n-1) + (n-2) + (n-3) + ... + 3 + 2 + 1 = n(n+1)/2
+Think like this:
+it is n + [(n-1)+1] + [(n-2)+2] ...
+= n + (n-1)/2 * n (Basically (n-1)/2 times we get n )
+
+n + (n-1)/2 *n = 3n/2 = n(n+1)/2
+===================================================================
+There are 4 slots each slot can have numbers from 1-5 then how many such numbers can be generated?
+==> each slot can have 5 possibilities so 5 * 5 * 5 * 5 = 5^4 possibilities are there
+
+===================================================================
+
+There are 3 slots, each slot can have any number from 1-5 but once the number is used it cannot be
+repeated. How many numbers can be generated?
+==> first slot can have 5 numbers, second slot can have 4 numbers, third slot can have 3 numbers
+so 5 * 4 * 3
+

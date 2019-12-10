@@ -1,0 +1,21 @@
+Bit Manipulation
+=======================
+* x&(x-1)
+* x&~(x-1)
+* x >> 1 (4 >> 1 = 2), (64 >> 1 = 32)
+* x << 1 (1 << 1 = 2), (4 << 1 = 8)
+* XOR (^) is in-equality detector ( 1 ^ 1 = 0, 1 ^ 0 = 1, 0 ^ 0 = 0)
+* (num & 1) gives 1 if last bit is 1 else 0
+   Example:-(10 & 1 = 0 since 10 = 1010, last bit is 0)
+            (11 & 1 = 1 since 11 = 1011, last bit is 1)
+* 2's compliment:
+    1. 2^8 = 256 (01011110) so 8 bits can be used to represent 256 numbers. It's from -128 to 127.
+    2. If MSB is 1 it means the number is -ve. If MSB is 0 it means number is +ve
+
+1. parity:
+2. swap bits:
+3. reverse bits:
+4. x^y:
+5. x/y:
+6. reverse digits:
+7. is digits in num a palindrome:
