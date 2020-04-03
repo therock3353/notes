@@ -1,0 +1,40 @@
+
+Minimum path in a triangle:
+    [  [4],
+      [1,2],
+     [8,10,6],
+    [12,6,5,2],
+    ]
+  We are given a triangle and we want to find the sum of minimum path starting from 1st row to last row.
+  In the example above the path is 4->2 (not 1)->6->2. From 1 we can jump to 8 or 10 and not 6 in 3rd row.
+
+Answer:
+    We need to look at this problem in bottom-up instead of top down. ie start from last row and calculate the cost
+    at each row.
+    In the last row 8 can choose min(12,6), 10 can choose min(6,5) and 6 can choose min(5,2)
+    so 3rd row has total costs as
+       [8,10,6]
+       +
+       [6,5,2]
+       =========
+       [14,15,8]
+
+    2rd row now has this choice of costs of 3rd row [14,15,8]
+    [1,2]
+    [14,15,8]
+    which is really
+    [1,2]
+    +
+    [14,8]
+    =========
+    [15, 10]
+
+    so 1st row when it looks down sees two costs path
+    [4]
+    [15,10] so it will select min(15,10) = 10
+    [4]
+    +
+    [10]
+    ======
+    [14]
+    so the min path will have cost 14
