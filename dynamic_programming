@@ -38,3 +38,41 @@ Answer:
     ======
     [14]
     so the min path will have cost 14
+================================================================================================================================
+
+Longest increasing subsequence:
+    [10,22,9,33,21,50,41,60,80]
+
+Answer:
+    The approach we take is that at each index what is the longest subsequence ending at that index.
+     j       i
+    [10,22,9,33,21,50,41,60,80]
+         j   i
+    [10,22,9,33,21,50,41,60,80]
+           j i
+    [10,22,9,33,21,50,41,60,80]
+
+    Initialize the result array as LIS -> [1,1,1,1,1,1,1,1,1]. The initial value is 1 as each integer is the longest subsequence including itself
+    so it is at-least 1. example: the longest subsequence of 9 is 1 (including 9) and excluding 10,22
+
+    Longest subsequence ending at index 0 is 1 [10] # LIS [1,1,1,1,1,1,1,1,1]
+    Longest subsequence ending at index 1 is 2 [10,22] # LIS [1,2,1,1,1,1,1,1,1]
+    Longest subsequence ending at index 2 is 1 [9] # LIS [1,2,1,1,1,1,1,1,1]
+    Longest subsequence ending at index 3 is 3 [10,22,33] # LIS [1,2,1,3,1,1,1,1,1]
+    Longest subsequence ending at index 4 is 2 [10,21] or [9,21] # LIS [1,2,1,3,2,1,1,1,1]
+    Longest subsequence ending at index 5 is 4 [10,22,33,50] # LIS [1,2,1,3,2,4,1,1,1]
+    Longest subsequence ending at index 6 is 4 [10,22,33,41] # LIS [1,2,1,3,2,4,4,1,1]
+    Longest subsequence ending at index 7 is 5 [10,22,33,50,60] # LIS [1,2,1,3,2,4,4,5,1]
+    Longest subsequence ending at index 8 is 6 [10,22,33,50,60,80] # LIS [1,2,1,3,2,4,4,5,6]
+
+    LIS = [1,1,1,1,1,1]
+    i = 0
+    while i < len(A):
+        seq = []
+        j = 0
+        while j < i:
+            if A[i] > A[j]:
+                seq.append(LIS[j]
+            j+=1
+        LIS[i] = max(seq) + LIS[i]
+        i+=1
