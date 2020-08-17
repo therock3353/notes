@@ -1,0 +1,79 @@
+
+class TreeNode(object):
+    def __init__(self, val):
+        self.val = val
+        self._left = None
+        self._right = None
+
+    @property
+    def left(self):
+        return self._left
+
+    @left.setter
+    def left(self, l):
+        self._left = l
+
+    @property
+    def right(self):
+        return self._right
+
+    @right.setter
+    def right(self, r):
+        self._right = r
+
+
+def get_sample_tree():
+    """
+                  50
+            ______|_______
+            |             |
+            30            70
+        _____|____    ____|____
+        |         |           |
+        20        40          90
+              _____|_____
+              |          |
+             35         45
+    """
+    n1 = TreeNode(50)
+    n2 = TreeNode(30)
+    n3 = TreeNode(70)
+    n4 = TreeNode(20)
+    n5 = TreeNode(40)
+    n6 = TreeNode(90)
+    n7 = TreeNode(35)
+    n8 = TreeNode(45)
+
+    n1.left = n2
+    n1.right = n3
+    n2.left = n4
+    n2.right = n5
+    n3.right = n6
+    n5.left = n7
+    n5.right = n8
+
+    return n1
+
+#[20, 30, 35, 40, 45, 50, 70, 90]
+def inorder(n, result):
+    if n is None:
+        return
+    inorder(n.left, result)
+    result.append(n.val)
+    inorder(n.right, result)
+
+#[50, 30, 20, 40, 35, 45, 70, 90]
+def pre_order(n, result):
+    if n is None:
+        return
+    result.append(n.val)
+    pre_order(n.left, result)
+    pre_order(n.right, result)
+
+#[20, 35, 45, 40, 30, 90, 70, 50]
+def post_order(n, result):
+    if n is None:
+        return
+    post_order(n.left, result)
+    post_order(n.right, result)
+    result.append(n.val)
