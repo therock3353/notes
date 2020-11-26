@@ -1,4 +1,10 @@
 """
+    [4,8,3,5]
+    for i in 1->n:
+        for j in 1->n:
+            compare A[j] to A[j+1]
+
+
 1st pass:
     i =0, j = 0, j+1 = 1
         compare nums[j=0] to nums[j=1] & move the larger element to j=1
