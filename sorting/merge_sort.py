@@ -1,5 +1,6 @@
 
 """
+
                 [5, 4, 80, 60, 23, 6, 2, 1]
 SPLIT PHASE     [5, 4, 80, 60][23, 6, 2, 1]
                 [5, 4][80, 60][23, 6][2, 1]
@@ -11,7 +12,25 @@ MERGE PHASE     [4, 5][60, 80][6, 23][1, 2]
 Essentially merge sort has below 2 steps:
     a. Split the input array into half recursively unless array length is less than 2.
     This can be achived O(1) as we calculate the mid pt by arithmetic len(arr)/2 or (high+low)/2
+    b. Merge the two individually sorted arrays into a single array. If two arrays are of length
+    n/2 then the operational complexity of merging two n/2 arrays is n.
 
+    worst case of merging:
+        [1,3,5]
+        [4,6,20]
+        [1,3,4,5,6,20] => we had to do 5 comparisions here.
+
+    Since there are log(n) times the merging happens and in each iteration we merge n elements O(n).
+    The total complexity is nlog(n).
+                            [5, 4, 80, 60, 23, 6, 2, 1]
+                        -----------------------------                       |
+                        |                            |                      |
+                    [5, 4, 80, 60]              [23, 6, 2, 1]               |   merge n numbers => O(n)
+                -----------------              -----------------            |           :
+                |                |             |                |           |           :
+            [5, 4]           [80, 60]       [23, 6]           [2, 1]        |   merge n numbers => O(n)
+
+                                                                               We do this operation log(n) times. ==> nlog(n)
 
 """
 
