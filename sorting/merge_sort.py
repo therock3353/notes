@@ -25,10 +25,10 @@ Essentially merge sort has below 2 steps:
                             [5, 4, 80, 60, 23, 6, 2, 1]
                         -----------------------------                       |
                         |                            |                      |
-                    [5, 4, 80, 60]              [23, 6, 2, 1]               |   merge n numbers => O(n)
+                    [5, 4, 80, 60]              [23, 6, 2, 1]               |   merge n numbers => O(n) [2 arrays each with n/2 elements so n elements total needs merging]
                 -----------------              -----------------            |           :
                 |                |             |                |           |           :
-            [5, 4]           [80, 60]       [23, 6]           [2, 1]        |   merge n numbers => O(n)
+            [5, 4]           [80, 60]       [23, 6]           [2, 1]        |   merge n numbers => O(n) [4 arrays each with n/4 elements so n elements total needs merging]
 
                                                                                We do this operation log(n) times. ==> nlog(n)
 
