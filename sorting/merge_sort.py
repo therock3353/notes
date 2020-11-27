@@ -1,4 +1,20 @@
 
+"""
+                [5, 4, 80, 60, 23, 6, 2, 1]
+SPLIT PHASE     [5, 4, 80, 60][23, 6, 2, 1]
+                [5, 4][80, 60][23, 6][2, 1]
+
+MERGE PHASE     [4, 5][60, 80][6, 23][1, 2]
+                [4, 5, 60, 80][1, 2, 6, 23]
+                [1, 2, 4, 5, 6, 23, 60, 80]
+
+Essentially merge sort has below 2 steps:
+    a. Split the input array into half recursively unless array length is less than 2.
+    This can be achived O(1) as we calculate the mid pt by arithmetic len(arr)/2 or (high+low)/2
+
+
+"""
+
 def merge(first, second):
     result = []
     idx1, idx2 = 0, 0
@@ -41,6 +57,14 @@ def merge_sort(nums):
     if not nums:
         return nums
     return divide(nums)
+
+# Best Case O(nlog(n))
+# If array is already sorted, still merge sort will split the array and merge the array of length n, log(n) times.
+# ----------------
+# Worst Case O(nlog(n))
+# -----------------
+# Average Case O(nlog(n))
+# ------------------
 
 if __name__=="__main__":
     d = [10,4,5,2,8,18,9]
