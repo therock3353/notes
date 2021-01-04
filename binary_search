@@ -18,3 +18,33 @@ def binary_search(data, x, left, right):
         return binary_search(data, x, mid_pt+1, right)
     elif x < data[mid_pt]:
         return binary_search(data, x, left, mid_pt-1)
+
+
+Variant:
+    1. Start from 0 and in a sorted array, multiply by 2.
+    look at 1 position,
+    look at 2 position
+    look at 4 position
+    look at 8 position etc.
+
+"""
+    def binary_search_window(A, x):
+        start_pt = -1
+        last = len(A)-1
+        index = 1
+
+        while index <= last:
+            while A[index] > x:
+                index -= 1
+            if x == A[index]:
+                while index > 0 and A[index] == A[index-1]:
+                    index -= 1
+                start_pt = index
+                break
+            index = index * 2
+        return start_pt
+
+    d = [0,0,1,1,1,1,1,1,1,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,4,4]
+    x = 2
+    print binary_search_window(d, x)
+"""
