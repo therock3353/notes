@@ -6,8 +6,7 @@
 # if x > A[mid_pt] then left = mid_pt + 1
 # if x < A[mid_pt] then right = mid_pt - 1
 
-def binary_search(data, x, left, right):
-
+def binary_search_recursive(data, x, left, right):
     if left > right:
         return -1
 
@@ -15,9 +14,22 @@ def binary_search(data, x, left, right):
     if x == data[mid_pt]:
         return x
     elif x > data[mid_pt]:
-        return binary_search(data, x, mid_pt+1, right)
+        return binary_search_recursive(data, x, mid_pt+1, right)
     elif x < data[mid_pt]:
-        return binary_search(data, x, left, mid_pt-1)
+        return binary_search_recursive(data, x, left, mid_pt-1)
+
+def binary_search(A, x):
+    l = 0
+    r = len(A)-1
+    while l <= r:
+        mid_pt = (l+r)/2
+        if x == A[mid_pt]:
+            return x
+        elif x > A[mid_pt]:
+            l = mid_pt + 1
+        else:
+            r = mid_pt - 1
+    return -1
 
 
 Variant:
