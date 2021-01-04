@@ -1,0 +1,20 @@
+# Array needs to be sorted
+# Operational Complexity log(n)
+
+# The only thing from implementation perspective you have to remember is
+# that when calling the binary_search recursively,
+# if x > A[mid_pt] then left = mid_pt + 1
+# if x < A[mid_pt] then right = mid_pt - 1
+
+def binary_search(data, x, left, right):
+
+    if left > right:
+        return -1
+
+    mid_pt = (left + right)/2
+    if x == data[mid_pt]:
+        return x
+    elif x > data[mid_pt]:
+        return binary_search(data, x, mid_pt+1, right)
+    elif x < data[mid_pt]:
+        return binary_search(data, x, left, mid_pt-1)
