@@ -51,5 +51,5 @@ def insertion_sort(A):
     return A
 
 if __name__=="__main__":
-    d = [8, 2, 5, 3, 4, 1, 6]
+    d = [8, 2, 5, 3, 2, 4, 1, 6]
     print insertion_sort(d)
