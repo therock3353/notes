@@ -20,3 +20,13 @@ Example:
     d[:1] --> all elements upto index 1 but not including 1
     d[1:] --> all elements starting from index 1 including element at index 1
 """
+
+'''
+In python arrays, slicing by indexing is very good. You don't get index error.
+
+'''
+data = [10,20]
+print data[5:] #print data from index 5 onwards. There is no index 5 so it will print empty list but no index error
+data = []
+print data[:1] #print data till (not including) index 1. But list only has 1 element (index 0) still no index error is thrown.
+#only empty list is created.
