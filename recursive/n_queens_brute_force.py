@@ -119,9 +119,16 @@ def is_valid_chessboard(board):
                  |   C  |
                  | 16   |
 
+    
+    The way below code is implemented, it does take into account the position of each of the queens hence 
+    the code runs even worst |  4   | = 16!/(16-4)! = 43680 times the board is evaluated.
+                             |   P  |  
+                             | 16   |
+
 """
-def n_queens_brute_force(board, num_queens, result):
+def n_queens_brute_force(board, num_queens, result, result_cntr):
     if num_queens == 0:
+        result_cntr["r"] += 1
         if is_valid_chessboard(board=board):
             s = ""
             for i in range(len(board)):
@@ -139,7 +146,7 @@ def n_queens_brute_force(board, num_queens, result):
             if board[row_id][col_id] == 0:
                 new_board = copy.deepcopy(board)
                 new_board[row_id][col_id] = -1
-                n_queens_brute_force(board=new_board, num_queens=num_queens-1, result=result)
+                n_queens_brute_force(board=new_board, num_queens=num_queens-1, result=result, result_cntr=result_cntr)
 
 
 if __name__=="__main__":
@@ -150,4 +157,6 @@ if __name__=="__main__":
         [0, 0, 0, 0],
     ]
     num_queens = 4
-    n_queens_brute_force(board=b, num_queens=num_queens, result={})
+    cntr = {"r": 0}
+    n_queens_brute_force(board=b, num_queens=num_queens, result={}, result_cntr=cntr)
+    print "cntr {}".format(cntr)
