@@ -114,11 +114,18 @@ def is_valid_chessboard(board):
     return is_valid
 
 """
-    If there are 4 queens and 16 (4*4) board then 4 queens can be placed in
-    16 places in | 4    |   ways. This equals 16!/(4!)(16-4!) = 1820 ways
-                 |   C  |
-                 | 16   |
-
+    The optimization is that if there is a 4*4 board then all queens must be on
+    different rows. We can select the position of 1st queen in 4 ways. 1 in 4 ways for 4 different times.
+    and if there are 4 rows then each row can have 4 possibilities of queen placement
+    hence the O(n) = 4 ^ 4 = 256. This is much better than 4C16 (which is 1820).
+    
+    [0, 0, q, 0] => queen can be placed anywhere from 0-3 index so there are 4 possibilities
+    [q, 0, 0, 0] => since queen can be placed anywhere from 0-3 on this row as well, the total possibilities between row 0 and 1 = 4*4 = 16
+    [0, 0, 0, 0]
+    [0, 0, 0, 0]
+    
+    After each complete possibility, the board becomes complete and must be evaluated if this is a valid board or not.
+    
 """
 def n_queens_brute_force(board, num_queens, result, result_cntr):
     if num_queens == 0:
