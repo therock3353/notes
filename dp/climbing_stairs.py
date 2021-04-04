@@ -6,7 +6,7 @@
     dp[1] = 0
     dp[2] = 1
     dp[3] = 1
-    dp[4] = dp[4-2] + dp[4-3]
+    dp[4] = dp[4-2] + dp[4-3] # you can go to 4-2 = 2nd stair and then take 2 step or you can go to 4-3 = 1st stair and then take 3 step.
     dp[5] = dp[5-2] + dp[5-3]
     dp[6] = dp[6-2] + dp[6-3]
     dp[7] = dp[7-2] + dp[7-3]
