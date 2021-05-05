@@ -24,7 +24,7 @@ def subsets(n, k, x, result, results):
 
 if __name__=="__main__":
     n = 5
-    k = 2
+    k = 3
     # [
     #   [1, 2], [1, 3], [1, 4], [1, 5],
     #   [2, 3], [2, 4], [2, 5],
