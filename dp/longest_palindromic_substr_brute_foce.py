@@ -25,9 +25,10 @@ def longest_palindrom_centered_at(s, index):
     palindrom = ""
     start = index
     end = index
-    if index + 1 < len(s):
-        if s[index] == s[index+1]:
-            end += 1
+    while start-1 >= 0 and s[start-1] == s[index]:
+        start -= 1
+    while end+1 < len(s) and s[end+1] == s[index]:
+        end += 1
 
     while start >= 0 and end < len(s):
         if s[start] != s[end]:
@@ -57,4 +58,5 @@ def longest_palindromic_substr_brute_force(s):
 if __name__=="__main__":
 
     s = "abmqapopap"
+    s = "abbba"
     print longest_palindromic_substr_brute_force(s)
