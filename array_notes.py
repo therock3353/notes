@@ -36,3 +36,9 @@ print data[:1] #print data till (not including) index 1. But list only has 1 ele
     Calculate power to operation
     10^2 = 100 (10 raised to 2 = 100). In python this would be 10 ** 2 = 100
 '''
+
+'''
+    reverse a string:
+        x = "this"
+        x = x[::-1] would reverse the string
+'''
