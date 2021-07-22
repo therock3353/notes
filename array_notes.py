@@ -30,3 +30,9 @@ print data[5:] #print data from index 5 onwards. There is no index 5 so it will 
 data = []
 print data[:1] #print data till (not including) index 1. But list only has 1 element (index 0) still no index error is thrown.
 #only empty list is created.
+
+
+'''
+    Calculate power to operation
+    10^2 = 100 (10 raised to 2 = 100). In python this would be 10 ** 2 = 100
+'''
