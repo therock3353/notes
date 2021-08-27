@@ -38,7 +38,26 @@ print data[:1] #print data till (not including) index 1. But list only has 1 ele
 '''
 
 '''
+    Mod operator in python is %
+    Mod means "baki" in marati.
+    print "8 % 3 =", 8 % 3 #2
+    print "5 % 2 =", 5 % 2 #1
+    
+'''
+
+
+'''
     reverse a string:
         x = "this"
         x = x[::-1] would reverse the string
+'''
+
+
+'''
+    a = [5, 4, 2, 10]
+    a.sort() will sort the list but the operation sorts in-place and returns nothing
+    print a.sort() will print None so x = a.sort(), x is None
+
+    sorted(a) on the other hand returns a list
+    x = sorted(a), x = sorted list of a elements
 '''
