@@ -31,6 +31,12 @@
     element and swap it with far right position. In bubble sort, we take the largest element and keep swapping it with it's neighbour
     untill it goes to far right (bubbles up).
 
+    Selection Sort
+            Best Case : O(n^2)
+            Avg Case : O(n^2)
+            Worst Case : O(n^2)
+
+
 """
 def selection_sort(A):
     largest_element_pos = len(A)-1
