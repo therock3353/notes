@@ -61,3 +61,15 @@ print data[:1] #print data till (not including) index 1. But list only has 1 ele
     sorted(a) on the other hand returns a list
     x = sorted(a), x = sorted list of a elements
 '''
+
+'''
+    d = {'amz': 200, 'vzy': 120, 'fb': 35, 'goog': 400}
+    Sort python dictionary by key:
+    sorted(d.items())
+    [('amz', 200), ('fb', 35), ('goog', 400), ('vzy', 120)]
+   
+    Sort python dictionary by value:
+    import operator
+    sorted(d.items(), key=operator.itemgetter(1))  
+    [('fb', 35), ('vzy', 120), ('amz', 200), ('goog', 400)] 
+'''
