@@ -58,6 +58,19 @@ def has_path(graph, src, dest):
     return False
 
 
+def print_all_paths(graph, x, y, visited):
+    if x == y:
+        path = "->".join([str(node) for node in visited]) + "->" + str(y)
+        print("Reached Destination node via {}".format(path))
+    visited.append(x)
+    neighbours = graph.get(x, [])
+    for neighbour in neighbours:
+        if neighbour not in visited:
+            print_all_paths(graph, neighbour, y, visited)
+    visited.pop()
+
+
 if __name__=="__main__":
     graph = get_graph()
     print(has_path(graph, 0, 6))
+    print(print_all_paths(graph, 0, 6, []))
