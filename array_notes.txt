@@ -73,3 +73,19 @@ print data[:1] #print data till (not including) index 1. But list only has 1 ele
     sorted(d.items(), key=operator.itemgetter(1))  
     [('fb', 35), ('vzy', 120), ('amz', 200), ('goog', 400)] 
 '''
+
+'''
+- Isomorphic Strings
+
+- Anagram (A word is re-arranged to form another word)
+    rama = > amar
+        The number of characters are the same in both the words
+        r:1
+        a:2
+        m:1
+
+- Palindrom (If you cut the string at half point then you get mirror image of the string)
+    abcba or abccba
+
+'''
+
