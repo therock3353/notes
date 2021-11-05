@@ -1,8 +1,68 @@
-
 - DFS
+    - Use DFS to find path between src and dest node.
+    - When do you mark the node as visited? when you enter the function (pre-processing)
+    or when you go to all the children and in the end you mark the node visited (post-processing)
+
+    def dfs(graph, src, dest, visited):
+        if dest is reached:
+            print("done")
+        visited.add(src)
+        neighbours = graph.get(src, [])
+        for neighbour in neighbours:
+            if neighbour is not in visited:
+                dfs(graph, neighbour, dest, visited)
+
 - BFS
+   - BFS gives shortest path between src and dest node for directed or un-directed graphs.
+   shortest in-terms of node distance and not edge weight.
+   - Use if you want to find if src and dest are connected.
+   - Hard to find path between src and dest nodes using BFS
+
+- Is Graph Bi-partite.
+    Can you split the graph or color the nodes of the graph in two colors.
+
+    1 (blue) ------------- 3 (green)
+    |                       |
+    |                       |
+    2 (green) ------------ 4 (blue)
+
+    We are able to split above graph into two unique sets
+    set1 = (1,4)
+    set2 = (2,3)
+    such that all the edges in the graph are across the set.
+
+    Do with BFS. Each level is alternate color.
+    If the graph is acyclic then it is bi-partite.
+    If the graph has cycle:
+        - If the cycle length in even then it is bi-partite
+        - If the cycle length is odd then it is not bi-partite.
+
+    Non bi-partite graph
+    1 (blue) ------------- 2 (green)
+    |                       |
+    |-------------3 --------|
+            (blue or green??)
+
 - Topological Sort
-
-
 - Djekstra's Algorithm
 
+Problems to solve:
+    1) Number of islands - can be solved using BFS, DFS
+    2) Paint a boolean matrix (EPI 18.2) - can be solved using BFS, DFS
+    3) Search in a maze (EPS 18.1) - can be solved using BFS, DFS
+    4) is src and dest node connected - only solved using BFS
+    5) all paths between src and dest node - only solved using DFS
+
+    6) length of longest and shortest path (by node count) between two nodes in graph.
+    7) does graph has cycle, what is the length of the largest and smallest cycle.
+    8) is graph bipartite
+
+    -3) leetcode 490 Maze
+    -2) Robot room cleaner
+    -1) Clone a graph
+
+    topological sort
+    Djekstra's algo
+
+    Next iteration:
+        - Minimum spanning tree - Kruskal's algo, Prim's algo
