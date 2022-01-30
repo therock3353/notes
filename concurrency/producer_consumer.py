@@ -1,27 +1,22 @@
-from threading import Thread, Condition, current_thread
+from threading import Thread, current_thread
 from time import sleep
 import random
+from queue import Queue
+
+#In python Queue is thread-safe
 
 class Producer(object):
     def __init__(self):
-        self.queue = []
-        self.MAX_NUM = 2
-        self.condition = Condition()
+        self.queue = Queue(maxsize=2)
 
     def produce(self):
         i = 0
         while i < 10:
-            #global condition
-            with self.condition:
-                while len(self.queue) >= self.MAX_NUM:
-                    print("{} waiting for Queue size to shrink from {}".format(current_thread().name, len(self.queue)))
-                    self.condition.wait()
-                num = random.randint(1, 1000)
-                self.queue.append(num)
-                print("{} produced {}".format(current_thread().name, num))
-                i += 1
-                self.condition.notify_all()
-                sleep(0.1)
+            num = random.randint(1, 100)
+            self.queue.put(num)
+            print("{} produced {}".format(current_thread().name, num))
+            i += 1
+            sleep(0.1)
 
 class Consumer(object):
     def __init__(self, prod):
@@ -30,15 +25,10 @@ class Consumer(object):
     def consume(self):
         i = 0
         while i < 10:
-            # global condition
-            with self.producer.condition:
-                while not self.producer.queue:
-                    print("Queue is empty hence {} waiting".format(current_thread().name))
-                    self.producer.condition.wait()
-                num = self.producer.queue.pop(0)
+            if self.producer.queue:
+                num = self.producer.queue.get()
                 print("{} consumed {}".format(current_thread().name, num))
                 i += 1
-                self.producer.condition.notify_all()
                 sleep(0.5)
 
 producer = Producer()
