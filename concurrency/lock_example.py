@@ -13,9 +13,8 @@ class Asset(object):
         self.i = new_val
 
     def process(self, new_val):
-        self.lock.acquire()
-        self.change_variable(new_val)
-        self.lock.release()
+        with self.lock:
+            self.change_variable(new_val)
 
 
 def num_generator(asset):
