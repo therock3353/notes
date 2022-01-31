@@ -23,13 +23,10 @@ class Consumer(object):
         self.producer = prod
 
     def consume(self):
-        i = 0
-        while i < 10:
-            if self.producer.queue:
-                num = self.producer.queue.get()
-                print("{} consumed {}".format(current_thread().name, num))
-                i += 1
-                sleep(0.5)
+        while self.producer.queue:
+            num = self.producer.queue.get()
+            print("{} consumed {}".format(current_thread().name, num))
+            sleep(0.5)
 
 producer = Producer()
 consumer = Consumer(producer)
