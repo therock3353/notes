@@ -16,5 +16,5 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 
 ## Stack and Queue:
 
-1.  https://github.com/therock3353/notes/blob/master/stack_queue/queue_from_stack.py 
-2.  Stack from Queue https://github.com/therock3353/notes/blob/master/stack_queue/queue_from_stack.py
+1.  [Queue from Stack](https://github.com/therock3353/notes/blob/master/stack_queue/queue_from_stack.py)  
+2.  [Stack from Queue](https://github.com/therock3353/notes/blob/master/stack_queue/stack_from_queue.py)
