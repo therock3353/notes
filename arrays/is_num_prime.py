@@ -30,13 +30,14 @@ def is_num_prime(num):
                 is_prime = False
                 break
         if is_prime is True:
+            if num % intermediate_num == 0:
+                return False
             all_primes_so_far.append(intermediate_num)
-
     if num == all_primes_so_far[-1]:
         return True
     else:
         return False
 
 if __name__=="__main__":
-    num = 20
+    num = 49
     print(is_num_prime(num))
