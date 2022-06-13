@@ -14,4 +14,7 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 7.  [Longest Increasing Subsequence](https://github.com/therock3353/notes/blob/master/recursive/longest_increasing_subsequence.py) \[[Leetcode 300](https://leetcode.com/problems/longest-increasing-subsequence/)\]
 8.  [Generate Parenthesis](https://github.com/therock3353/notes/blob/master/recursive/generate_paranthesis.py) \[[Leetcode 22](https://leetcode.com/problems/generate-parentheses/)\]
 
-## **DP**
+## Stack and Queue:
+
+1.  https://github.com/therock3353/notes/blob/master/stack_queue/queue_from_stack.py 
+2.  Stack from Queue https://github.com/therock3353/notes/blob/master/stack_queue/queue_from_stack.py
