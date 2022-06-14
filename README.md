@@ -14,7 +14,30 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 7.  [Longest Increasing Subsequence](https://github.com/therock3353/notes/blob/master/recursive/longest_increasing_subsequence.py) \[[Leetcode 300](https://leetcode.com/problems/longest-increasing-subsequence/)\]
 8.  [Generate Parenthesis](https://github.com/therock3353/notes/blob/master/recursive/generate_paranthesis.py) \[[Leetcode 22](https://leetcode.com/problems/generate-parentheses/)\]
 
+
+## LinkedList:
+
+1.  [Add two numbers](https://github.com/therock3353/notes/blob/master/linkedlist/add_two_numbers.py)
+2.  [Delete a Node](https://github.com/therock3353/notes/blob/master/linkedlist/delete_node.py)
+3.  Reverse LinkedList
+4.  Linkedlist has cycle
+5.  Remove Nth node from end of LinkedList
+6.  Palindromic LinkedList
+7.  Odd-Even LinkedList
+8.  DeepCopy of LinkedList with Random Ptr
+
 ## Stack and Queue:
 
 1.  [Queue from Stack](https://github.com/therock3353/notes/blob/master/stack_queue/queue_from_stack.py)  
 2.  [Stack from Queue](https://github.com/therock3353/notes/blob/master/stack_queue/stack_from_queue.py)
+
+## Tree:
+
+## Heap:
+
+## Binary Search:
+
+## Hashmap:
+
+## Sorting:
+
