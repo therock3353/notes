@@ -21,5 +21,5 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 
 ## LinkedList:
 
-1.  <kbd>Add two numbers</kbd>  
-2.  [Stack from Queue](https://github.com/therock3353/notes/blob/master/stack_queue/stack_from_queue.py)
+1.  Add two numbers 
+2.  Delete a Node
