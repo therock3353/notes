@@ -21,5 +21,5 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 
 ## LinkedList:
 
-1.  \[Add two numbers\]\[https://github.com/therock3353/notes/blob/master/linkedlist/add_two_numbers.py]
-2.  Delete a Node
+1.  [Add two numbers](https://github.com/therock3353/notes/blob/master/linkedlist/add_two_numbers.py)
+2.  [Delete a Node](https://github.com/therock3353/notes/blob/master/linkedlist/delete_node.py)
