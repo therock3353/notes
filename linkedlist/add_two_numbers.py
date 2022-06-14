@@ -88,5 +88,3 @@ class Solution(object):
             result.next = ListNode(remainder)
 
         return result_head
-
-if __name__=="__main__":
