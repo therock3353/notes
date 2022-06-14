@@ -1,3 +1,21 @@
+"""
+Leetcode 2 https://leetcode.com/problems/add-two-numbers/
+    The 2 numbers represented by linked-list are say: 283 and 9780 (283+9780 = 10063)
+    The numbers are already provided as reversed linked list
+
+    num1        3 -> 8 -> 2
+    num2        0 -> 8 -> 7 -> 9
+
+            3   +    0  + remaininder(0) = 3
+            |        |
+            8   +    8  + remaininder(0) = 6
+            |        |
+            2   +    7  + remaininder(1) = 0
+                     |
+                     9  + remaininder(1) = 0
+
+                        + remainder(1)   = 1
+"""
 
 class ListNode(object):
     def __init__(self, val=0, next=None):
@@ -70,3 +88,5 @@ class Solution(object):
             result.next = ListNode(remainder)
 
         return result_head
+
+if __name__=="__main__":
