@@ -39,5 +39,7 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 
 ## Hashmap:
 
+1. [Palindromic Permutations] [EPI 12.1](https://github.com/therock3353/notes/blob/master/hashmap/palindromic_permutations.py)
+
 ## Sorting:
 
