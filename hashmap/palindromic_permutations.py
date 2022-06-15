@@ -3,6 +3,9 @@
     https://www.geeksforgeeks.org/check-characters-given-string-can-rearranged-form-palindrome/
     EPI 12.1
     Given a list of characters, can they be rearranged to form a palindrom
+
+    Time Complexity O(n), Space O(m) => m is the number of uniq char in characters
+
 """
 
 def palindrom_permutations(characters):
