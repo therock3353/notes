@@ -40,10 +40,10 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 
 ## Hashmap:
 
-1. [Palindromic Permutations][EPI 12.1](https://github.com/therock3353/notes/blob/master/hashmap/palindromic_permutations.py)
-2. [Ransom Note][EPI 12.2](https://github.com/therock3353/notes/blob/master/hashmap/ransom_note.py)
-3. [Nearest Repeated Entry][EPI 12.4](https://github.com/therock3353/notes/blob/master/hashmap/nearest_repeated_entry.py)
-4. [Top 3 students with highest marks] [EPI 12.11](https://github.com/therock3353/notes/blob/master/hashmap/student_top_3_scores.py)
+1. [Palindromic Permutations EPI 12.1](https://github.com/therock3353/notes/blob/master/hashmap/palindromic_permutations.py)
+2. [Ransom Note EPI 12.2](https://github.com/therock3353/notes/blob/master/hashmap/ransom_note.py)
+3. [Nearest Repeated Entry EPI 12.4](https://github.com/therock3353/notes/blob/master/hashmap/nearest_repeated_entry.py)
+4. [Top 3 students with highest marks EPI 12.11](https://github.com/therock3353/notes/blob/master/hashmap/student_top_3_scores.py)
 5. 
 
 ## Sorting:
