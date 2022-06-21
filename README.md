@@ -42,7 +42,7 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 
 1. [Palindromic Permutations] [EPI 12.1](https://github.com/therock3353/notes/blob/master/hashmap/palindromic_permutations.py)
 2. [Ransom Note] [EPI 12.2](https://github.com/therock3353/notes/blob/master/hashmap/ransom_note.py)
-3. [Top 3 students with highest marks] [EPI 12.10](https://github.com/therock3353/notes/blob/master/hashmap/student_top_3_scores.py)
+3. [Top 3 students with highest marks] [EPI 12.11](https://github.com/therock3353/notes/blob/master/hashmap/student_top_3_scores.py)
 
 ## Sorting:
 
