@@ -33,7 +33,7 @@ def longest_substr_wo_repeating_char(A):
             if curr_substr_len > longest_substr_len:
                 longest_substr_len = curr_substr_len
             uniq_char_index_map = {}
-            curr_substr_len = 1
+            curr_substr_len = 0
         index += 1
 
     if curr_substr_len > longest_substr_len:
@@ -41,5 +41,6 @@ def longest_substr_wo_repeating_char(A):
     return longest_substr_len
 
 if __name__=="__main__":
-    s = "abcdmqcmmaddx"
+    #s = "abcdmqcmmaddx"
+    s = "abcabcbb"
     print longest_substr_wo_repeating_char(s)
