@@ -44,10 +44,11 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 2. [Ransom Note EPI 12.2](https://github.com/therock3353/notes/blob/master/hashmap/ransom_note.py)
 3. [Nearest Repeated Entry EPI 12.6](https://github.com/therock3353/notes/blob/master/hashmap/nearest_repeated_entry.py)
 4. [Smallest Subarray covering all values EPI 12.7](https://github.com/therock3353/notes/blob/master/hashmap/smallest_subarray_all_vals.py)
-5. [Longest Substring Without Repeating Characters EPI 12.9](https://github.com/therock3353/notes/blob/master/hashmap/longest_substr_wo_repeat_char.py)
-6. [Longest Consecutive Sequence EPI 12.10](https://github.com/therock3353/notes/blob/master/hashmap/longest_conseq_seq.py)
-7. [Top 3 students with highest marks EPI 12.11](https://github.com/therock3353/notes/blob/master/hashmap/student_top_3_scores.py)
-8. 
+5. [Smallest Subarray sequentially covering all values EPI 12.8](https://github.com/therock3353/notes/blob/master/hashmap/smallest_subarray_all_values_in_seq.py)
+6. [Longest Substring Without Repeating Characters EPI 12.9](https://github.com/therock3353/notes/blob/master/hashmap/longest_substr_wo_repeat_char.py)
+7. [Longest Consecutive Sequence EPI 12.10](https://github.com/therock3353/notes/blob/master/hashmap/longest_conseq_seq.py)
+8. [Top 3 students with highest marks EPI 12.11](https://github.com/therock3353/notes/blob/master/hashmap/student_top_3_scores.py)
+9. 
 
 ## Sorting:
 
