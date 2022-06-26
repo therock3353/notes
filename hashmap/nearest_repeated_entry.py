@@ -5,7 +5,9 @@ EPI 12.4
     c at 5th and 7th location is most near each other.
     and distance between them is 7-5 = 2
 
-      
+    - Time Complexity => O(n)
+    - Space Complexity => O(n)
+
 """
 
 def nearest_repeated_entry(data):

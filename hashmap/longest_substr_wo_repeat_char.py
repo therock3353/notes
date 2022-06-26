@@ -13,6 +13,9 @@
 
     next seq: d, m, q, c, [m] since m is repeated seq, now start at q.
 
+    Time Complexity: O(n)
+    Space : O(n)
+    Worst Case: O(n)
 """
 
 def longest_substr_wo_repeating_char(A):

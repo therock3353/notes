@@ -39,6 +39,7 @@ def longest_conseq_seq_brute_force(A):
         while prev element in set:
         
     You iterate over the array A twice so O(n) = 2n ~= n
+    Worst case is also O(n)
 """
 def longest_conseq_seq(A):
     if not A:

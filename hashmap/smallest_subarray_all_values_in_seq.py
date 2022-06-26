@@ -28,6 +28,8 @@
                 0         1       2       3      4
             here our start index needs to be 2 and not 0.
 
+    Time Complexity => O(n)
+
 """
 
 def smallest_subarry(text, words):
