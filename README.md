@@ -19,11 +19,11 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 
 1.  [Add two numbers](https://github.com/therock3353/notes/blob/master/linkedlist/add_two_numbers.py)
 2.  [Delete a Node](https://github.com/therock3353/notes/blob/master/linkedlist/delete_node.py)
-3.  Reverse LinkedList
+3.  [Reverse a LinkedList]()
 4.  [Linkedlist has cycle & Length of Cycle](https://github.com/therock3353/notes/blob/master/linkedlist/cycle_in_linkedlist.py)
 5.  [Node where cycle starts & length of linkedlist with cycle](https://github.com/therock3353/notes/blob/master/linkedlist/cycle_start_node.py)
 6.  Remove Nth node from end of LinkedList
-7.  Palindromic LinkedList
+7.  [is LinkedList Palindromic](https://github.com/therock3353/notes/blob/master/linkedlist/palindrom_linked_list.py)
 8.  Odd-Even LinkedList
 9.  DeepCopy of LinkedList with Random Ptr
 
