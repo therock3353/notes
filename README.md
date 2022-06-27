@@ -27,6 +27,7 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 8.  Odd-Even LinkedList
 9.  DeepCopy of LinkedList with Random Ptr
 10. [Merge Two Sorted Lists](https://github.com/therock3353/notes/blob/master/linkedlist/merge_two_sorted_lists.py)
+11. [Remove Duplicates](https://github.com/therock3353/notes/blob/master/linkedlist/remove_duplicates.py)
 
 ## Stack and Queue:
 
