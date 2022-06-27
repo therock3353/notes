@@ -1,7 +1,8 @@
 """
 21. Merge Two Sorted Lists https://leetcode.com/problems/merge-two-sorted-lists/
 
-
+    No additional space required.
+    Time complexity => O(n) + O(m)
 """
 class ListNode(object):
     def __init__(self, val=0, next=None):
