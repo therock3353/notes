@@ -22,7 +22,7 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 3.  [Reverse a LinkedList](https://github.com/therock3353/notes/blob/master/linkedlist/reverse_linked_list.py)
 4.  [Linkedlist has cycle & Length of Cycle](https://github.com/therock3353/notes/blob/master/linkedlist/cycle_in_linkedlist.py)
 5.  [Node where cycle starts & length of linkedlist with cycle](https://github.com/therock3353/notes/blob/master/linkedlist/cycle_start_node.py)
-6.  Remove Nth node from end of LinkedList
+6.  [Remove Nth node from end of LinkedList](https://github.com/therock3353/notes/blob/master/linkedlist/remove_nth_node.py)
 7.  [Is LinkedList Palindromic](https://github.com/therock3353/notes/blob/master/linkedlist/palindrom_linked_list.py)
 8.  Odd-Even LinkedList
 9.  DeepCopy of LinkedList with Random Ptr
