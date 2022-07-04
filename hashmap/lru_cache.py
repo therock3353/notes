@@ -11,48 +11,62 @@
     Note:
         self.store.popitem(last=False) api call.
 
+
+    class LRUCache(object):
+        def __init__(self, capacity):
+            self.capacity = capacity
+            self.data = []
+
+        def get(self, key):
+            if key in self.data:
+                value = self.data.pop(key)
+                self.data[key] = value
+                key exists in dictionary hence need to remove it and add it back so
+                the key access is recorded in most frequently accessed key
+
+        def put(self, key, value):
+            if key exists in self.data:
+                remove key
+                add key, value back to self.data
+            else:
+                key doesn't exist so we need to add new element in self.data
+                so check if the size of self.data is beyond capacity
+                if len(self.data) >= self.capacity:
+                    remove the first item added to self.data
+                    self.data.popitem(last=False)
+                    self.data[key] = value
+                else:
+                    self.data.pop(key, None)
+                    self.data[key] = value
+
+
 """
 from collections import OrderedDict
 
 class LRUCache(object):
     def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
         self.capacity = capacity
-        self.store = OrderedDict()
+        self.data = OrderedDict()
 
     def get(self, key):
-        """
-        :type key: int
-        :rtype: int
-        """
-        if key in self.store:
-            value = self.store.pop(key)
-            self.store[key] = value
-            return value
+        if key in self.data:
+            val = self.data.pop(key, None)
+            self.data[key] = val
+            return val
         return -1
 
     def put(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: None
-        """
-        if len(self.store) < self.capacity:
-            if key not in self.store:
-                self.store[key] = value
-            else:
-                self.store.pop(key)
-                self.store[key] = value
+        if key in self.data:
+            self.data.pop(key, None)
+            self.data[key] = value
         else:
-            if key not in self.store:
-                self.store.popitem(last=False)
-                self.store[key] = value
+            if len(self.data) >= self.capacity:
+                self.data.popitem(last=False)
+                self.data[key] = value
             else:
-                self.store.pop(key)
-                self.store[key] = value
-
+                self.data.pop(key, None)
+                self.data[key] = value
+    
 lru = LRUCache(2)
 lru.put(1,1)
 lru.put(2,2)
@@ -63,4 +77,3 @@ lru.put(4,4)
 print(lru.get(1))
 print(lru.get(3))
 print(lru.get(4))
-
