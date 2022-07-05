@@ -1,8 +1,18 @@
 Sorting Algorithms:
-1. Bubble Sort
-2. Merge Sort
-3. Quick Sort
-4. Heap Sort
+1. Bubble Sort -> stable
+2. Selection Sort -> unstable
+3. Insertion Sort
+4. Merge Sort  -> stable
+5. Quick Sort
+6. Heap Sort
+7. Bucket Sort
+
+Stable Sorting v/s unstable sorting:
+    If there are any duplicate numbers then is their order preserved.
+    [10, 4, 5*, 100, 5**] => [4, 5*, 5**, 10, 100]
+    if the sorting algorithm produces above output then it is considered stable.
+
+
 
 Searching Algorithms:
 1. Binary Search (Iterative and Recursive)
