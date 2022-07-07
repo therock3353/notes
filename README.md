@@ -37,7 +37,6 @@ Feel free to checkout the notes and solutions to common ds/algo questions.  
 1.  [Queue from Stack](https://github.com/therock3353/notes/blob/master/stack_queue/queue_from_stack.py)  
 2.  [Stack from Queue](https://github.com/therock3353/notes/blob/master/stack_queue/stack_from_queue.py)
 3.  [Stack with Max api](https://github.com/therock3353/notes/blob/master/stack_queue/stack_with_max.py)
-4.  [Queue with Max api](https://github.com/therock3353/notes/blob/master/stack_queue/queue_with_max.py)
 
 
 ## Tree:
