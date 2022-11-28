@@ -60,3 +60,92 @@ def find_boundry(A, target):
         left_boundry = left1
         right_boundry = right2
     return [left_boundry, right_boundry]
+
+# Below is alternative implementation of the same concept.
+# You have left and right ptr. left = 0 and right = len(A)-1
+# To find left boundary, you take right pointer and try to place it towards left-most element
+# To find right boundary, you take left ptr and try to place it towards right-most element
+#   left boundary:
+#       [10, 20, 20, 20, 20, 20, 30]    target = 20
+#        l           m          <- r
+#        l         <-r
+#        l    r
+#   There are two cases:
+#       [10, 20, 20 ..]                    [10, 20, 20, ...]
+#        l    r                                 l    r
+#                   if (right - left) == 1:
+#                       if A[left] == target:           Since we are looking for left boundary, check left first
+#                           left_boundary = left
+#                       elif A[right] == target:
+#                           left_boundary = right
+#
+#   Same applies for right boundary as well.
+#
+#   right boundary:
+#       [10, 20, 20, 20, 20, 20, 30]    target = 20
+#        l->         m            r
+#                    l            r
+#                         l       r
+#   There are two cases:
+#       [...20, 20, 30]                    [..., 20, 20, 30]
+#            l   r                                    l   r
+#                   if (right - left) == 1:
+#                       if A[right] == target:           Since we are looking for right boundary, check right first
+#                           right_boundary = right
+#                       elif A[left] == target:
+#                           left_boundary = left
+#
+def find_boundry_alt(A, target):
+    if not A or target is None:
+        return -1
+    left = 0
+    right = len(A)-1
+    result = []
+    while left <= right:
+        mid = (left+right)/2
+        if (right - left) == 1 or (left == right):
+            if A[left] == target:
+                result.append(left)
+            elif A[right] == target:
+                result.append(right)
+            break
+        if target > A[mid]:
+            left = mid + 1
+        elif target < A[mid]:
+            right = mid - 1
+        else:
+            right = mid
+    if not result:
+        result.extend([-1, -1])
+        return result
+    left = result[0]
+    right = len(A) - 1
+    while left <= right:
+        mid = (left+right)/2
+        if (right - left) == 1 or (left == right):
+            if A[right] == target:
+                result.append(right)
+            elif A[left] == target:
+                result.append(left)
+            break
+        if target > A[mid]:
+            left = mid + 1
+        elif target < A[mid]:
+            right = mid - 1
+        else:
+            left = mid
+    return result
+
+# A = [1,1,1,1,2,3]
+# target = 1
+# print find_boundry_alt(A, target)
+# A = [1,2,3,4,6,7,8,9,10]
+# target = 5
+# print find_boundry_alt(A, target)
+# A = [5,7,8,10,12,14,16]
+# target = 7
+# print find_boundry_alt(A, target)
+A = [5, 10]
+target = 8
+print find_boundry_alt(A, target)
+
