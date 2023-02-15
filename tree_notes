@@ -1,0 +1,37 @@
+Tree Traversal
+    - inorder (left - root - right)
+    - preorder (root - left - right
+    - postorder(left - right - root)
+
+    - level order
+
+"""
+              25
+        15           50
+     10      22    35     70
+   4    12  18 24 31  44 66  90
+
+"""
+
+#4-10-12-15-18-22-24-25-31-35-44-50-66-70-90
+def inorder(node, result):
+    if node is None:
+        return
+    inorder(node.left, result)
+    result.append(node.val)
+    inorder(node.right, result)
+
+#25-15-10-4-12-22-18-24-50-35-31-44-70-66-90
+def preorder(node, result):
+    if node is None:
+        return
+    result.append(node.val)
+    preorder(node.left, result)
+    preorder(node.right, result)
+
+def postorder(node, result):
+    if node is None:
+        return
+    preorder(node.left, result)
+    preorder(node.right, result)
+    result.append(node.val)
