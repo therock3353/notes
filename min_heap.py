@@ -1,16 +1,43 @@
 """
-    [0, 1, 2, 3, 4, 5, 6]
-    [4,10,15,20,12,18,30]
+    Heap is an array based data structure that can have 2 flavors.
+    1. min heap
+    2. max heap
+
+    1. max heap:
+        In a max heap, the largest number is stored as root. Each parent element in max heap is larger than any of it's children.
+                    30
+            20              25
+        10      8       24       21
+
+        20 is less than 24 or 21 but it is greater than any of it's children.
+
+    2. min heap:
+        Python 2.7 only has min-heap implementation. **Most of the problems can be solved by min-heap**
+        Question yourself if you have to solve a problem by max-heap. 90% of the problems can be solved by min-heap.
+
+        [0, 1, 2, 3, 4, 5, 6]
+        [4,10,15,20,12,18,30]
+                    4
+            10              15
+        20      12      18      30
 
     Child: 2*i+1    4 -> 10,15
-           2*i+2    10-> 20,12
+    ====== 2*i+2    10-> 20,12
                     15-> 18,30
 
     Parent: (i-1)/2     18 -> i=5 -> (i-1)/2 -> 2 -> data[2] = 15
-                        12 -> i=4 -> (i-1)/2 -> 1 -> data[1] = 10
+    =======             12 -> i=4 -> (i-1)/2 -> 1 -> data[1] = 10
                         20 -> i=3 -> (i-1)/2 -> 1 -> data[1] = 10
                         10 -> i=1 -> (i-1)/2 -> 0 -> data[0] = 4
                         15 -> i=2 -> (i-1)/2 -> 0 -> data[0] = 4
+
+    Heapify:
+    ========
+
+    Remove element from the heap:
+    =============================
+
+
 """
 
 class MinHeap(object):

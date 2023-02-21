@@ -16,6 +16,10 @@ while not q.empty():
 # q.empty()
 # q.get()
 
+# If you ever want to implement a Stack or a Queue,
+#   use linked-list. Arrays are good for random access
+#   but in Stack/Queue, random access A[i] is not required.
+
 #############################################
 #############################################
 #############################################
