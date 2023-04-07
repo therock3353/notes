@@ -1,0 +1,37 @@
+1. all permutations of seq
+    [2, 3, 5, 7]
+                    2                                  3              ........         5
+        3           5          7               2       5        7
+    5       7   3       7   3       5       5    7   2    7   2    5
+    7       5   7       3   5       3       7    5   7    2   5     2
+
+    Since there are 4 positions and at each position we can fill 1 of 4 choices
+    0th position has 4 options * 1st position has remaining 3 options * 2nd position has remaining 2 options ..
+    n * (n-1) * (n-2) ... * 1 = n!
+
+2. combinations
+    
+
+3. generate parenthesis
+    Same as (1)
+
+4. n-Queeen
+
+
+5. restore IP addresses
+    111222111222
+                               1.                          11.                                111.
+                1.             11.             112.
+        1.    12.   122.   2.  22.   222.   2.  22.   221.
+222111222   221xxx  211xx  22x  21x  111xx
+(x)
+Since IP address can be max 255 (3 digits max). The worst case performance
+can be 3^3
+
+
+6. Generate binary tree
+
+
+7. palindromic partitions
+
+8. unique paths (leetcode 62)
