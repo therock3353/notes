@@ -28,3 +28,10 @@ repeated. How many numbers can be generated?
 ==> first slot can have 5 numbers, second slot can have 4 numbers, third slot can have 3 numbers
 so 5 * 4 * 3
 
+ 5!         120
+-----   =  ------  = 10
+3!2!        12
+
+5!      120
+--- = ------- =
+3!      6
