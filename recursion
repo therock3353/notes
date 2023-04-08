@@ -70,7 +70,18 @@ Operational Complexity Of various Recursive Operations:
     Since in each iteration, we traverse n digits 2^n is multiplied by n.
 
 
-2. combinations
+2. subsets
+    input is [1,2,3,4]
+                    1                       2               3           4
+                    |                       |               |
+        2           3       4           3       4           4
+        |           |                   |
+     3     4        4                   4
+    |
+    4
+
+    O(n) = 2^(N-1) ~= 2^n
+
 
 
 3. generate parenthesis
