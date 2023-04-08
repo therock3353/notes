@@ -1,0 +1,115 @@
+
+Permutations:
+    If we are given an input such as [1,2,3] then return all permutations of the sequence i.e
+    [
+        [1,2,3],
+        [1,3,2],
+        [2,1,3],
+        [2,3,1],
+        [3,1,2],
+        [3,2,1]
+    ]
+
+    ----------------------------------------------------------------------------------------
+    |       1                   |           2                       |           3           |
+    ----------------------------------------------------------------------------------------
+selected: 1  |  pass to next:       selected: 2 |  pass to next:     selected: 3 |     pass to next:
+      ------------ [2,3]             ---------------- [1,3]                 -------------   [1,2]
+      |          |                   |              |                       |           |
+     ----       ----                ------        ------                   ----        ----
+    | 2  |     |  3 |               | 1  |        |  3  |                  | 1 |       | 2 |
+     ----      ------               ------        ------                   -----       -----
+selected:2      selected: 3           selected:1    selected:3                  [2]         [1]
+pass to next: [3]   pass to next:[2]   pass to next:[3]   pass to next:[1]
+[1,2,3]             [1,3,2]             [2,1,3]             [2,3,1]             [3,1,2]     [3,2,1]
+
+    We iterate through the array and in each iteration we select only 1 element to be added into result.
+    We pass all the other elements to be processed in the next iteration by calling the same function
+    with other elements as input.
+
+    def permutations(self, numbers, len_of_orig_seq, result, results)
+
+        if len(result) == len_of_orig_seq:
+            results.append(result)
+            return
+
+        for i, number in enumerate(numbers):
+            selected_num = number
+            result = result + [selected_num]
+            other_unselected_numbers = numbers[:i]+numbers[i+1:]
+            self.permutations(other_unselected_numbers, len_of_orig_seq, result, results)
+
+===============================================================================================
+Operational Complexity Of various Recursive Operations:
+
+1. all permutations of seq
+    [2, 3, 5, 7]
+                    2                                  3              ........         5
+        3           5          7               2       5        7
+    5       7   3       7   3       5       5    7   2    7   2    5
+    7       5   7       3   5       3       7    5   7    2   5     2
+
+    Since there are 4 positions and at each position we can fill 1 of 4 choices
+    0th position has 4 options * 1st position has remaining 3 options * 2nd position has remaining 2 options ..
+    n * (n-1) * (n-2) ... * 1 = n!
+    Since in each iteration, we traverse n digits, O(n) = n*(n!)
+
+2. palindromic partitions
+    "aaaa" => ["a","a","a","a"],["a","a","aa"],["a","aa","a"], ["a","aaa","a"], ["aa","a","a"],["aa","aa"],
+                ["aaa","a"], ["aaaa"] => total 8
+
+    Recursion Tree
+                    a               aa            aaa       aaaa
+            a       aa  aaa       a    aa        a           8
+       a     aa    a     4       a      6        7
+    a         2    3             5
+    1
+    When you have recursion tree like this the number of uniq paths = 2 ^ (N-1).
+    Since there are 4 char hence N=4, 2^(4-1) = 8
+    O(n) = n*(2^(n-1)) ~= n*(2^n)
+    Since in each iteration, we traverse n digits 2^n is multiplied by n.
+
+
+2. combinations
+
+
+3. generate parenthesis
+    Same as (1)
+
+4. n-Queeen
+    if n == 4:
+    | x |   |   |   |              |   | x |   |   |           |   |   | x |   |
+    |   |   |   | x |   =>         |   |   |   | x |    =>     |   |   |   |   |
+    |   | x |   |   |              | x |   |   |   |           |   |   |   |   |
+    |   |   |   |   |              |   |   | x |   |           |   |   |   |   |
+
+    1st queen can be placed in one of 4 columns in row 1 in 4 ways.
+    2nd queen can be placed in one of 4 columns in row 2 in 4-k ways
+    3rd queen can be placed in one of 4 columns in row 3 in 4-k ways
+               n!
+    O(n) = -------------
+            (some const)
+
+
+5. restore IP addresses
+    111222111222
+                               1.                          11.                                111.
+                1.             11.             112.
+        1.    12.   122.   2.  22.   222.   2.  22.   221.
+222111222   221xxx  211xx  22x  21x  111xx
+(x)
+Since IP address can be max 255 (3 digits max). The worst case performance
+can be 3^3
+
+
+6. Generate binary tree
+
+
+8. unique paths (leetcode 62)
+
+9. reverse an array
+
+10. fibonachi series
+
+11. merge sort
+
