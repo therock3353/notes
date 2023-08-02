@@ -1,5 +1,19 @@
 import heapq
 
+"""
+we have k sorted arrays. Each array has n elements. These can be merged into a sorted
+array using min-heap.
+
+the problem we will face is how to get next element from the list, this is solved
+by using iter() function and saving list_iterators in a different list. this way
+we can just call lst_iterator.next() and keep getting next elements from the list.
+no need to do index manipulation.
+
+Since we have k arrays, each of size N, total elements in the problem are N*K.
+Since each element is added into heap of size k, this adding (or removing) operation is (log(k)).
+Hence O(n) = nklog(k)
+Memory ~= k since heap is of size k.
+"""
 def merge_k_sorted_arrays(data):
     result = []
     heap = []
