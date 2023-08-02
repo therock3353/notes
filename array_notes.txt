@@ -89,3 +89,5 @@ print data[:1] #print data till (not including) index 1. But list only has 1 ele
 
 '''
 
+positive_infinity = float('inf')
+negative_infinity = float('-inf')

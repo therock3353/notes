@@ -1,3 +1,11 @@
+Terminology:
+    [] <= Node is called Vertex
+    [] ----------> []   <= connector between nodes is called an Edge
+================================================================================================
+Topological Sort:
+    In post processing, put in stack.
+
+=================================================================================================
 - DFS
     - Use DFS to find path between src and dest node.
     - When do you mark the node as visited? when you enter the function (pre-processing)
