@@ -23,7 +23,7 @@ class PaymentFactory(object):
         'cash': CashPayment
     }
 
-    def __get_payment_processor(self, payment_method):
+    def get_payment_processor(self, payment_method):
         if payment_method not in PaymentFactory.__methods:
             raise Exception("payment method is not supported")
         payment_method_class = PaymentFactory.__methods.get(payment_method)
@@ -34,7 +34,7 @@ class BaseVendingMachine(object):
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
-    def purchase(self, key):
+    def purchase(self, key, payment_method):
         pass
 
     @abc.abstractmethod
@@ -44,6 +44,8 @@ class BaseVendingMachine(object):
     @abc.abstractmethod
     def __dispatch(self, key):
         pass
+    def get_payment_processor(self, payment_method):
+        return PaymentFactory.get_payment_processor(payment_method=payment_method)
 
 class PricingProvider(object):
     __metaclass__ = abc.ABCMeta
@@ -68,7 +70,6 @@ class VendingMachine(BaseVendingMachine):
         self.num_cols = 5
         self.default_item_count = 2
         self.pricing_provider = StaticPricingProvider()
-        self.payment_processor = None
         self.items = []
         self.load_machine()
 
@@ -79,16 +80,21 @@ class VendingMachine(BaseVendingMachine):
                 row.append(self.default_item_count)
             self.items.append(row)
         print self.items
-        
+
     def purchase(self, key, payment_method):
         self.validate(key)# validate that item exists in vending machine
         amount = self.pricing_provider.price(key)
-        payment_processor = self.get_payment_processor()
-        if self.payment_processor.pay(amount) is True:
+        payment_processor = self.get_payment_processor(payment_method)
+        if payment_processor.process_payment(amount) is True:
             self.__dispatch(key)
 
     def validate(self, key):
-        pass
+        row_id = key[0]
+        col_id = key[1]
+        if row_id >= self.num_rows or col_id >= self.num_cols:
+            raise Exception("please make valid selection")
+        if self.items[row_id][col_id] == 0:
+            raise Exception("item out of stock")
 
     def __dispatch(self, key):
         row_id = key[0]
