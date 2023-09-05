@@ -4,7 +4,7 @@ from datetime import datetime
 class Car(object):
     def __init__(self):
         self.ticket = None
-        #critique ==> car has ticket attribute although it is not necessary that parking lot
+        #@TODO critique ==> car has ticket attribute although it is not necessary that parking lot
         # in which the car is parked will work with tickets. There can be free parking lots
         # or company paid parking lots which don't require you to have ticket
 

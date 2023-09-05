@@ -1,0 +1,27 @@
+System Design:
+1. Proximity Services (Geolocation)
+2. Nearby Friends
+3. Distributed Message Queue
+4. Design Reservation System
+5. Leaderboard
+6. TSDB Time series DB
+7. Ad-click event aggregation
+8. Email service
+9. TinyURL
+10. Rate Limiter API
+11. Design Dropbox
+12. Design Twitter
+13. Design Youtube/Netflix
+14. Design Whatsapp
+15. Design Search
+16. Instagram News Feed
+17. Google Doc (multiple people editing the same doc)
+18. Search Auto-complete feature
+19. Payment Service
+
+Object Oriented Design:
+1. Design Parking Lot
+2. Design Vending Machine
+
+Common Design Patterns:
+https://docs.google.com/document/d/1p7FajUEmRWn8SOiMjYFnd1Ax0nxH2Cfi/edit?usp=sharing&ouid=103911392078474650117&rtpof=true&sd=true
