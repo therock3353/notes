@@ -124,4 +124,23 @@ can be 3^3
 
 11. merge sort
 
-12. decode ways:
+12. decode ways
+    Time Complexity O(N) = 2^N
+    There are N digits and you have to go through them all. At each iteration, we have 2 options
+    either the 1st digit is a valid character or 1st 2 digits constitute a valid character.
+    Since there are 2 choices at each iteration & N digits, O(N) = 2^N
+    input: 1231
+    We check max 2 possibilities in each step:
+        - is 1st digit mapping to any letter?
+        - is 1st 2 digits mapping to any letter?
+    We check 2 possibilities because we are given letters between A-Z which correspond to digits 1-26.
+
+                    1                       12
+            2               23          3       31(X)
+        3      31(X)    1           1
+     1
+
+Since in each step we can have 2 options 1st char (s[0]) or 1st 2 char (s[:2]) & there are N digits
+    Time Complexity: O(2^N)
+    Space Complexity: O(N)
+
