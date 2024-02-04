@@ -52,3 +52,9 @@ SELECT pets.name AS pet_name, owners.name AS owner
 -- 4) There is a table which contains two columns Student and Marks, you need to find all the students,
 --     whose marks are greater than average marks i.e. list of above-average students.
 -- 5) Write SQL Query to find duplicate rows in a database? and then write SQL query to delete them
+
+-- ==========================================================================================
+-- ==========================================================================================
+-- ==========================================================================================
+
+
