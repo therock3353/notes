@@ -38,3 +38,113 @@ MariaDB [pg_test]> select * from sales;
 | 10 |           4 |          1 | 2021-03-10 |         100 |
 +----+-------------+------------+------------+-------------+
 10 rows in set (0.000 sec)
+
+
+1) Get departments that pay most salaries
+MariaDB [pg_test]> select department, avg(salary) as avg_sal from employees group by department order by avg_sal desc;
++------------+------------+
+| department | avg_sal    |
++------------+------------+
+| sales      | 85000.0000 |
+| Marketing  | 65000.0000 |
+| HR         | 62500.0000 |
+| IT         | 44000.0000 |
++------------+------------+
+4 rows in set (0.001 sec)
+
+2) Get employee that gets most and least salary
+MariaDB [pg_test]> select name, department, salary from employees where salary =(select max(salary) from employees);
++------+------------+--------+
+| name | department | salary |
++------+------------+--------+
+| dave | sales      |  85000 |
++------+------------+--------+
+1 row in set (0.001 sec)
+
+MariaDB [pg_test]> select name, department, salary from employees where salary =(select  min(salary) from employees);
++---------+------------+--------+
+| name    | department | salary |
++---------+------------+--------+
+| charlie | IT         |  44000 |
++---------+------------+--------+
+
+
+3) Get the 2nd highest salary paid
+MariaDB [pg_test]> select max(salary) from employees where salary != (select max(salary) from employees);
++-------------+
+| max(salary) |
++-------------+
+|       70000 |
++-------------+
+
+4)Get the employee with nth largest salary
+MariaDB [pg_test]> select name, salary from employees order by salary desc limit 1 offset 2;
++------+--------+
+| name | salary |
++------+--------+
+| bob  |  65000 |
++------+--------+
+1 row in set (0.000 sec)
+
+5) What is alice's sale record?
+MariaDB [pg_test]> select employees.name, sales.product_id, sales.sale_date, sales.sale_amount from employees inner join sales on employees.id = sales.employee_id and employees.name = "alice";
++-------+------------+------------+-------------+
+| name  | product_id | sale_date  | sale_amount |
++-------+------------+------------+-------------+
+| alice |          1 | 2021-03-01 |        1000 |
+| alice |          2 | 2021-03-20 |        2000 |
+| alice |          3 | 2021-04-01 |         500 |
++-------+------------+------------+-------------+
+3 rows in set (0.001 sec)
+
+
+6) Which products have been sold the most times?
+MariaDB [pg_test]> select products.name, T1.sale_quantity from products inner join (select product_id, count(*) as sale_quantity
+                        from sales group by product_id order by sale_quantity desc) as T1 on products.id = T1.product_id;
++---------+---------------+
+| name    | sale_quantity |
++---------+---------------+
+| Books   |             6 |
+| Bags    |             2 |
+| Widgets |             2 |
++---------+---------------+
+
+7)Which products have made most $$.
+   -     select products.name, T1.total_sale from products inner join (select product_id, sum(sale_amount) as total_sale
+                        from sales group by product_id order by total_sale desc) as T1 on products.id = T1.product_id;
+   -     select products.name, sum(sales.sale_amount) as total_sale from products inner join sales on
+                        products.id = sales.product_id group by sales.product_id order by total_sale desc;
++---------+------------+
+| name    | total_sale |
++---------+------------+
+| Books   |       3500 |
+| Bags    |       2200 |
+| Widgets |        800 |
++---------+------------+
+
+8)Find out all sales done by HR department
+MariaDB [pg_test]> select employees.name, employees.department, sales.product_id, sales.sale_date from employees left join sales on employees.id = sales.employee_id where employees.department = "HR";
++-------+------------+------------+------------+
+| name  | department | product_id | sale_date  |
++-------+------------+------------+------------+
+| alice | HR         |          1 | 2021-03-01 |
+| alice | HR         |          2 | 2021-03-20 |
+| alice | HR         |          3 | 2021-04-01 |
+| eve   | HR         |       NULL | NULL       |
++-------+------------+------------+------------+
+4 rows in set (0.001 sec)
+
+
+9)Find product name, sale date of all the product where the sale amount >= 500
+MariaDB [pg_test]> select products.name, sales.sale_date, sales.sale_amount from sales inner join products on sales.product_id = products.id where sales.sale_amount >= 500;
++---------+------------+-------------+
+| name    | sale_date  | sale_amount |
++---------+------------+-------------+
+| Books   | 2021-03-01 |        1000 |
+| Books   | 2021-03-10 |        1500 |
+| Bags    | 2021-03-20 |        2000 |
+| Widgets | 2021-04-01 |         500 |
++---------+------------+-------------+
+4 rows in set (0.003 sec)
+
+10)
