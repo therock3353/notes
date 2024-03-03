@@ -147,4 +147,56 @@ MariaDB [pg_test]> select products.name, sales.sale_date, sales.sale_amount from
 +---------+------------+-------------+
 4 rows in set (0.003 sec)
 
-10)
+10) Which employee made the highest sale and what was that product name?
+MariaDB [pg_test]> select employees.name, products.name, sales.sale_date, sales.sale_amount from
+                            employees inner join sales on employees.id = sales.employee_id
+                            inner join products on sales.product_id = products.id
+                            where sales.sale_amount = (select max(sale_amount) from sales);
++-------+------+------------+-------------+
+| name  | name | sale_date  | sale_amount |
++-------+------+------------+-------------+
+| alice | Bags | 2021-03-20 |        2000 |
++-------+------+------------+-------------+
+1 row in set (0.001 sec)
+
+======================================================================================
+======================================================================================
+======================================================================================
+
+SAMPLE DATA
+COUNTRY
+id  name    population  area
+1   France  66600000    640680
+2   Germany 80700000    357000
+... ... ... ...
+CITY
+id  name    country_id  population  rating
+1   Paris   1           2243000     5
+2   Berlin  2           3460000     3
+
+LEFT JOIN
+---------
+LEFT JOIN returns all rows from the left table with corresponding rows from the right table.
+If there's no matching row, NULLs are returned as values from the second table.
+```
+    SELECT city.name, country.name FROM city LEFT JOIN country ON city.country_id = country.id;
+```
+CITY                        COUNTRY
+id  name    country_id      id      name
+1   Paris        1          1       France
+2   Berlin       2          2       Germany
+3   Warsaw       4          NULL    NULL
+
+
+RIGHT JOIN
+----------
+RIGHT JOIN returns all rows from the right table with corresponding rows from the left table.
+If there's no matching row, NULLs are returned as values from the left table.
+```
+    SELECT city.name, country.name FROM city RIGHT JOIN country ON city.country_id = country.id;
+```
+CITY                        COUNTRY
+id  name    country_id      id      name
+1   Paris        1          1       France
+2   Berlin       2          2       Germany
+NULL NULL        NULL       3       ICELAND
