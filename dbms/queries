@@ -200,3 +200,16 @@ id  name    country_id      id      name
 1   Paris        1          1       France
 2   Berlin       2          2       Germany
 NULL NULL        NULL       3       ICELAND
+
+
+SELF JOIN
+----------
+id	|  name		| department | mgr_id
+1	|  alice	|	hr		 |	2
+2	|  bob		|	hr		 |	2
+3	|  sam		|	hr		 |	2
+4	|  bill		|	hr		 |	2
+5	|  chill	|	hr		 |	4
+```
+    select e.id, e.name from employee e inner join employee m on m.id = e.mgr_id;
+```
