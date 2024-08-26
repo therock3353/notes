@@ -1,0 +1,27 @@
+from threading import Thread, Lock, Condition, Semaphor
+
+#Start a Thread
+def func1(a):
+    pass
+
+t1 = Thread(target=func1, args=(200,))
+t1.start()
+t2 = Thread(target=func1, args=(100,))
+t2.start()
+
+
+#Lock
+lock = Lock()
+with lock:
+    modify variables.
+    common code to be executed in thread-safe manner.
+
+
+#Condition
+condition = Condition()
+with condition:
+    while q is empty:
+        condition.wait()
+
+    # perform tasks
+    condition.notify()
