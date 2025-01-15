@@ -20,9 +20,11 @@ Minimum Spanning Trees:
     - Kruskal's algorithm
     - Prim's algorithm
         https://mathsathome.com/prims-algorithm/
+
 Topological Sorting:
-    - Kahn’s algorithm
+    - Kahn’s algorithm  (in-degrees calculation using BFS)
     - DFS-based topological sorting
+      Both methods have same O(N) hence focusing on DFS for now
 
 Cycle Detection:
     - In directed and undirected graphs
