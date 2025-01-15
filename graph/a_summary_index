@@ -1,0 +1,44 @@
+Key Graph Topics to Study:
+
+Graph Representation:
+    - Adjacency matrix
+    - Adjacency list
+    - Edge list
+
+Graph Traversal Algorithms:
+    - Depth-First Search (DFS)
+    - Breadth-First Search (BFS)
+
+Shortest Path Algorithms:
+    - Dijkstra's algorithm
+        https://nkugwamarkwilliam.medium.com/dijkstras-shortest-path-algorithm-in-python-6d8f99a9f223
+    - Bellman-Ford algorithm
+    - Floyd-Warshall algorithm
+    - A* search algorithm (basic understanding)
+
+Minimum Spanning Trees:
+    - Kruskal's algorithm
+    - Prim's algorithm
+        https://mathsathome.com/prims-algorithm/
+Topological Sorting:
+    - Kahn’s algorithm
+    - DFS-based topological sorting
+
+Cycle Detection:
+    - In directed and undirected graphs
+
+Network Flow Algorithms:
+    - Ford-Fulkerson method
+    - Edmonds-Karp algorithm (BFS implementation of Ford-Fulkerson)
+    - Capacity scaling
+
+Graph Connectivity:
+    - Strongly connected components (Tarjan's or Kosaraju's algorithm)
+    - Bridges and articulation points
+
+Bipartite Graphs:
+    - Bipartite matching (Hungarian algorithm)
+    - Kőnig’s theorem
+
+Graph Coloring:
+    Basic concepts and applications
