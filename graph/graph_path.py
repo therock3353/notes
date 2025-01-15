@@ -58,19 +58,27 @@ def has_path(graph, src, dest):
     return False
 
 
-def print_all_paths(graph, x, y, visited):
-    if x == y:
-        path = "->".join([str(node) for node in visited]) + "->" + str(y)
-        print("Reached Destination node via {}".format(path))
-    visited.append(x)
-    neighbours = graph.get(x, [])
-    for neighbour in neighbours:
-        if neighbour not in visited:
-            print_all_paths(graph, neighbour, y, visited)
-    visited.pop()
 
+class GraphAllPaths(object):
+    def dfs(self, node, dest, graph, visited, currPath, paths):
+        if node == dest:
+            paths.append(currPath)
+            return
+        if node in visited:
+            return
+        visited.add(node)
+        for neighbour in graph.get(node, []):
+            self.dfs(neighbour, dest, graph, visited, currPath+"->"+str(neighbour) if currPath else currPath+str(neighbour), paths)
+        visited.remove(node)
+
+
+    def allPaths(self, src, dest, graph):
+        paths = []
+        visited = set()
+        self.dfs(src, dest, graph, visited, "", paths)
+        return paths
 
 if __name__=="__main__":
     graph = get_graph()
     print(has_path(graph, 0, 6))
-    print(print_all_paths(graph, 0, 6, []))
+    print(GraphAllPaths().allPaths(0, 6, graph))
