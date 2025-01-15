@@ -42,3 +42,23 @@ Bipartite Graphs:
 
 Graph Coloring:
     Basic concepts and applications
+
+
+============================================================================================
+============================================================================================
+============================================================================================
+DFS/BFS
+1. Graph has path from Src node to Dest node & what is the path.
+2. Print all paths from Src to Dest node.
+3. Shortest or Longest path from Src to Dest (Not Dijekstra or anything just pure DFS) **
+4. Get number of connected components
+5. Is graph connected
+6. Number of Islands
+7. Is graph cyclic? (undirected)
+8. Is graph bi-partite?
+9. Spread of infection
+
+9. Dijestra's Algorithm
+10. Prim's Algorithm
+11. Topological sort
+
