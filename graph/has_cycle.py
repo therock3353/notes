@@ -75,3 +75,52 @@ class UndirectedGraphCycle(object):
 
 
 print(UndirectedGraphCycle().isCycle(graph))
+
+
+'''
+    Detect Cycle in Directed Graph
+    
+    A ---------> B -------> C --------->E
+                 ^           |          ^
+                 |           |          |
+          ------>F          D ----------
+         |       |
+         |       |   
+         G <---- H   
+'''
+directed_graph = {
+    'a': ['b'],
+    'b': ['c'],
+    'c': ['d', 'e'],
+    'd': ['e'],
+    'e': [],
+    'f': ['g', 'b'],
+    'g': ['h'],
+    'h': ['f'],
+}
+
+class DirectedGraphCycle(object):
+
+    def dfs(self, node, graph, visited):
+        if node in visited:
+            return True
+        visited.add(node)
+        for neighbour in graph.get(node, []):
+            res = self.dfs(neighbour, graph, visited)
+            if res is True:
+                return res
+        visited.remove(node)
+        return False
+
+    def isCycle(self, graph):
+        if not graph:
+            return False
+
+        visited = set()
+        for node in graph.keys():
+            res = self.dfs(node, graph, visited)
+            if res is True:
+                return res
+        return False
+
+print(DirectedGraphCycle().isCycle(directed_graph))
