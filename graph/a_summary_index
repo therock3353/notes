@@ -64,3 +64,16 @@ DFS/BFS
 10. Prim's Algorithm
 11. Topological sort
 
+============================================================================================
+list of TODO graph problems:
+1. Course Schedule
+2. Course Schedule 2
+3. https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/description/
+4. https://leetcode.com/problems/evaluate-division/description/
+5. https://leetcode.com/problems/detonate-the-maximum-bombs/description/
+6. https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/description/
+7. https://leetcode.com/problems/clone-graph/description/
+8. https://leetcode.com/problems/diameter-of-binary-tree/description/
+9. https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
+10. https://leetcode.com/problems/possible-bipartition/description/
+11. https://leetcode.com/problems/number-of-provinces/description/
