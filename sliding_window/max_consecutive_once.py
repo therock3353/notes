@@ -42,3 +42,20 @@ def maxConsecutiveOnce(data, k):
 
 seq = [1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1]
 print(maxConsecutiveOnce(seq, 2))
+
+
+class Solution(object):
+    def longestOnes(self, nums, k):
+        max_ones = 0
+        left = 0
+        num_zeros = 0
+        for right in range(len(nums)):
+            if nums[right] == 0:
+                num_zeros += 1
+
+            while num_zeros > k:
+                if nums[left] == 0:
+                    num_zeros -= 1
+                left += 1
+            max_ones = max(max_ones, (right - left + 1))
+        return max_ones
